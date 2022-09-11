@@ -15,20 +15,20 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('hello', function () {
-    return '<html><body><h1>Hello</h1><p>This is sample page.</p></body></html>';
+Route::get('hello1', function () {
+    return '<html><body><h1>Hello1</h1><p>This is sample page.</p></body></html>';
 });
 
 $html = <<<EOF
 <html>
 <head>
-    <title>Hello</title>
+    <title>Hello2</title>
 </head>
 <style>
 
 </style>
 <body>
-    <h1>Hello</h1>
+    <h1>Hello2</h1>
     <p>This is a sample page.</p>
 </body>
 EOF;
@@ -55,3 +55,5 @@ Route::get('hello/{msg}', function ($msg) {
 EOF;
     return $html;
 });
+
+Route::get('hello', 'HelloController@index');
