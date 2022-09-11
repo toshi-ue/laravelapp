@@ -37,3 +37,21 @@ EOF;
 Route::get('hello2', function () use ($html) {
     return $html;
 });
+
+Route::get('hello/{msg}', function ($msg) {
+    $html = <<<EOF
+<html>
+<head>
+    <title>Hello</title>
+</head>
+<style>
+
+</style>
+<body>
+    <h1>Hello</h1>
+    <p>{$msg}</p>
+    <p>This is a sample page.</p>
+</body>
+EOF;
+    return $html;
+});
