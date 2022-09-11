@@ -11,6 +11,8 @@
 |
 */
 
+use App\Http\Controllers\HelloController;
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -57,3 +59,4 @@ EOF;
 });
 
 Route::get('hello/{id?/{pass?/}', 'HelloController@index');
+Route::get('hello/other', 'HelloController@other');
