@@ -18,3 +18,22 @@ Route::get('/', function () {
 Route::get('hello', function () {
     return '<html><body><h1>Hello</h1><p>This is sample page.</p></body></html>';
 });
+
+$html = <<<EOF
+<html>
+<head>
+    <title>Hello</title>
+</head>
+<style>
+
+</style>
+<body>
+    <h1>Hello</h1>
+    <p>This is a sample page.</p>
+</body>
+EOF;
+
+
+Route::get('hello2', function () use ($html) {
+    return $html;
+});
