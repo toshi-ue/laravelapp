@@ -1,0 +1,14 @@
+// [【2022年決定版】VSCodeをLaravel超特化型にする 最高の拡張機能10選まとめ。 【VisualStudio Code】【プラグイン】 | ゆるプロ](https://yurupro.cloud/2132/)
+// [Laravelで気持ちよく開発をするための拡張機能のまとめ - Qiita](https://qiita.com/motuo/items/5c9b24606ef75535f882)
+{
+    "recommendations": [
+        "onecentlin.laravel5-snippets",
+        "austenc.laravel-blade-spacer",
+        "amiralizadeh9480.laravel-extra-intellisense",
+        "codingyu.laravel-goto-view",
+        "ctf0.laravel-goto-controller",
+        "dotenv.dotenv-vscode",
+        "bmewburn.vscode-intelephense-client",
+        "xdebug.php-debug"
+    ]
+}
