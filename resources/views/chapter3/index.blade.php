@@ -28,6 +28,12 @@
         これはメッセージです
         @endslot
     @endcomponent
+
+    {{-- サブビュー --}}
+    @include('components.message', [
+        'msg_title'=>'OK',
+        'msg_content' => 'サブビューです'
+    ])
 @endsection
 
 @section('footer')
