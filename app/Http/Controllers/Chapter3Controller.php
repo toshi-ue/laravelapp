@@ -20,7 +20,9 @@ class Chapter3Controller extends Controller
             ['name' => '鈴木さちこ', 'mail' => 'sachico@happy']
         ];
 
-        return view('chapter3.index', ['data' => $data]);
+        // return view('chapter3.index', ['data' => $data]);
+        // ビューコンポーザを利用する
+        return view('chapter3.index', ['data' => $data, 'message' => 'Hello']);
     }
 
     public function post(Request $request)

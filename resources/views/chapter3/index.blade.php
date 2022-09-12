@@ -44,6 +44,11 @@
     <ul>
         @each('components.item', $data , 'item')
     </ul>
+
+    {{-- ビューコンポーザを利用する --}}
+    <h3>ビューコンポーザを利用する</h3>
+    <p>Controller value<br/>'message' = {{ $message }}</p>
+    <p>ViewComposer value<br/>'view_message' = {{ $view_message }}</p>
 @endsection
 
 @section('footer')

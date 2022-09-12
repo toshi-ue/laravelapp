@@ -175,7 +175,8 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-
+        // サービスプロバイダを登録
+        App\Providers\Chapter3ServiceProvider::class,
     ],
 
     /*
