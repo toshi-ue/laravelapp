@@ -17,7 +17,10 @@ class HelloController extends Controller
     //  コントローラに追加される処理のこと
     public function index()
     {
-        $data = ['msg' => 'これはコントローラーから渡されたメッセージです。'];
+        $data = [
+            'msg' => 'これはコントローラーから渡されたメッセージです。',
+            'array' => ['one', 'two', 'three', 'four', 'five']
+        ];
         return view('hello.index', $data);
     }
 

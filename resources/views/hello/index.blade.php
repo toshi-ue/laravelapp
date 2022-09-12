@@ -20,11 +20,20 @@
     <p>{{ date("Y年n月j日 h時i分") }}</p>
     <p>msg: {{ $msg }}</p>
 
+    <h3>if文</h3>
     @if ($msg != '')
     <p>こんにちは、{{ $msg }}さん</p>
     @else
     <p>なにか書いてください。</p>
     @endif
+
+    <h3>&#064;foreachディレクティブの例</h3>
+    <ol>
+    @foreach ($array as $item)
+    <li>{{ $item }}</li>
+    @endforeach
+    </ol>
+
 
     <form action="/hello" method="post">
         @csrf
