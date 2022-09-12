@@ -18,7 +18,14 @@
 <body>
     <h1>Blade/Index</h1>
     <p>{{ date("Y年n月j日 h時i分") }}</p>
-    <p>{{ $msg }}</p>
+    <p>msg: {{ $msg }}</p>
+
+    @if ($msg != '')
+    <p>こんにちは、{{ $msg }}さん</p>
+    @else
+    <p>なにか書いてください。</p>
+    @endif
+
     <form action="/hello" method="post">
         @csrf
         <input type="text" name="msg">
