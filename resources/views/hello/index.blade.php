@@ -28,11 +28,17 @@
     @endif
 
     <h3>&#064;foreachディレクティブの例</h3>
-    <ol>
+    <ul>
     @foreach ($array as $item)
-    <li>{{ $item }}</li>
+    @if ($loop->first)
+    <p>※データ一覧</p>
+    @endif
+    <li>No. {{ $loop->iteration }}. {{ $item }}</li>
+    @if ($loop->last)
+        <p>-------ここまで</p>
+    @endif
     @endforeach
-    </ol>
+    </ul>
 
 
     <form action="/hello" method="post">
