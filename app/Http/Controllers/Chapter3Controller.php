@@ -8,11 +8,19 @@ class Chapter3Controller extends Controller
 {
     public function index()
     {
+        // $data = [
+        //     'msg' => 'これはコントローラーから渡されたメッセージです。',
+        //     'array' => ['one', 'two', 'three', 'four', 'five']
+        // ];
+
+        // @eachによるコレクションビュー(@eachによる表示を利用する)
         $data = [
-            'msg' => 'これはコントローラーから渡されたメッセージです。',
-            'array' => ['one', 'two', 'three', 'four', 'five']
+            ['name' => '山田たろう', 'mail' => 'taro@yamada'],
+            ['name' => '田中はなこ', 'mail' => 'hanako@flower'],
+            ['name' => '鈴木さちこ', 'mail' => 'sachico@happy']
         ];
-        return view('chapter3.index', $data);
+
+        return view('chapter3.index', ['data' => $data]);
     }
 
     public function post(Request $request)

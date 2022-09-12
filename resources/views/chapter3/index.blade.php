@@ -19,7 +19,10 @@
 @section('content')
     <p>ここが本文のコンテンツです</p>
     <p>必要なだけ記述できます</p>
+    {{-- コンポーネントを読み込む --}}
+    <h3>コンポーネントを読み込む</h3>
     @component('components.message')
+        {{-- スロットについて --}}
         @slot('msg_title')
         CAUTION!
         @endslot
@@ -29,11 +32,18 @@
         @endslot
     @endcomponent
 
-    {{-- サブビュー --}}
+    {{-- message.blade.phpをサブビューで読み込む --}}
+    <h3>message.blade.phpをサブビューで読み込む</h3>
     @include('components.message', [
         'msg_title'=>'OK',
         'msg_content' => 'サブビューです'
     ])
+
+    {{-- @eachによるコレクションビュー(@eachによる表示を利用する) --}}
+    <h3>&#064;eachによるコレクションビュー(&#064;eachによる表示を利用する)</h3>
+    <ul>
+        @each('components.item', $data , 'item')
+    </ul>
 @endsection
 
 @section('footer')

@@ -1,3 +1,5 @@
+{{-- コンポーネントを読み込む --}}
+{{-- message.blade.phpをサブビューで読み込む --}}
 <style>
     .message { border: double 4px #ccc; margin: 10px; padding: 10px; }
     .msg_title { margin: 10px 20px; color: #999; font-size: 16pt; font-weight: bold; }
