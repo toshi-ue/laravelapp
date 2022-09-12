@@ -18,7 +18,12 @@
 <body>
     <h1>Blade/Index</h1>
     <p>{{ $msg }}</p>
-    <p>{{ date("Y年n月j日") }}</p>
+    <p>{{ date("Y年n月j日 h時i分") }}</p>
+    <form action="/hello" method="post">
+        @csrf
+        <input type="text" name="msg">
+        <input type="submit">
+    </form>
 </body>
 
 </html>
