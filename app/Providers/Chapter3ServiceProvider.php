@@ -27,12 +27,18 @@ class Chapter3ServiceProvider extends ServiceProvider
     {
         // クロージャでコンポーザ処理を作る(用意する)
         // view()->composerともかける
-        View::composer('chapter3.index', function ($view) {
-            // view_message
-            //     Illuminate\View 名前空間にあるViewクラスのインスタンス
-            // withメソッド
-            //     ビューに変数を追加する
-            $view->with('view_message', 'composer message!');
-        });
+        // View::composer('chapter3.index', function ($view) {
+        // view_message
+        //     Illuminate\View 名前空間にあるViewクラスのインスタンス
+        // withメソッド
+        //     ビューに変数を追加する
+        // $view->with('view_message', 'composer message!');
+        // });
+
+        // ビューコンポーザークラスの作成
+        View::composer(
+            'chapter3.index',
+            'App\Http\Composers\Chapter3Composer'
+        );
     }
 }
