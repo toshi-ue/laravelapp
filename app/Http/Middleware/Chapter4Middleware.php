@@ -15,14 +15,23 @@ class Chapter4Middleware
      */
     public function handle($request, Closure $next)
     {
-        $data = [
-            ['name' => 'taro', 'mail' => 'taro@yamada'],
-            ['name' => 'hanako', 'mail' => 'hanako@flower'],
-            ['name' => 'sachiko', 'mail' => 'sachico@happy'],
-        ];
+        // $data = [
+        //     ['name' => 'taro', 'mail' => 'taro@yamada'],
+        //     ['name' => 'hanako', 'mail' => 'hanako@flower'],
+        //     ['name' => 'sachiko', 'mail' => 'sachico@happy'],
+        // ];
 
-        // データを追加する
-        $request->merge(['data' => $data]);
-        return $next($request);
+        // // データを追加する
+        // $request->merge(['data' => $data]);
+        // return $next($request);
+        $response = $next($request);
+        $content = $response->content();
+
+        // TODO: middlewareタグって何?
+        $pattern = '/<middleware>(.*)<\/middleware>/i';
+        $replace = '<a href="http://$1">$1</a>';
+        $content = preg_replace($pattern, $replace, $content);
+        $response->setContent($content);
+        return $response;
     }
 }
