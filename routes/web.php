@@ -23,4 +23,4 @@ Route::get('/', function () {
 Route::get('hello', 'HelloController@index');
 Route::post('hello', 'HelloController@post');
 Route::get('chapter3', 'Chapter3Controller@index');
-Route::get('chapter4', 'Chapter4Controller@index')->middleware(Chapter4Middleware::class);
+Route::get('chapter4', 'Chapter4Controller@index');
