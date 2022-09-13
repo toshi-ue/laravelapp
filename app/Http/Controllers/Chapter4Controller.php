@@ -6,15 +6,9 @@ use Illuminate\Http\Request;
 
 class Chapter4Controller extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $data = [
-            ['name' => '山田たろう', 'mail' => 'taro@yamada'],
-            ['name' => '田中はなこ', 'mail' => 'hanako@flower'],
-            ['name' => '鈴木さちこ', 'mail' => 'sachico@happy']
-        ];
-
-        return view('chapter3.index', ['data' => $data, 'message' => 'Hello']);
+        return view('chapter4.index', ['data' => $request->data, 'message' => 'Hello']);
     }
 
     public function post(Request $request)
