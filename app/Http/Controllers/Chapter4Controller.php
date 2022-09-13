@@ -8,7 +8,7 @@ class Chapter4Controller extends Controller
 {
     public function index(Request $request)
     {
-        return view('chapter4.index', ['data' => $request->data, 'message' => 'Hello']);
+        return view('chapter4.index');
     }
 
     public function post(Request $request)
