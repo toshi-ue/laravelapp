@@ -43,6 +43,9 @@ class Kernel extends HttpKernel
             'throttle:60,1',
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
         ],
+        'chap4' => [
+            \App\Http\Middleware\Chapter4Middleware::class,
+        ]
     ];
 
     /**
