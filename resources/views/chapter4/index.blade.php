@@ -21,20 +21,29 @@
     <p>これは<middleware>google.com</middleware>へのリンクです。</p>
     <p>これは<middleware>yahoo.co.jp</middleware>へのリンクです。</p> --}}
     <p>{{ $msg }}</p>
+    @if (count($errors) > 0)
+    <div>
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+    @endif
     <form action="/chapter4" method="post">
         <table>
             @csrf
             <tr>
                 <th>name:</th>
-                <td><input type="text" name="name" id=""></td>
+                <td><input type="text" name="name" id="" value="{{ old('name') }}"></td>
             </tr>
             <tr>
                 <th>mail:</th>
-                <td><input type="text" name="mail" id=""></td>
+                <td><input type="text" name="mail" id="" value="{{ old('mail') }}"></td>
             </tr>
             <tr>
                 <th>age:</th>
-                <td><input type="text" name="age" id=""></td>
+                <td><input type="text" name="age" id="" value="{{ old('age') }}"></td>
             </tr>
             <tr>
                 <th></th>
