@@ -22,25 +22,37 @@
     <p>これは<middleware>yahoo.co.jp</middleware>へのリンクです。</p> --}}
     <p>{{ $msg }}</p>
     @if (count($errors) > 0)
-    <div>
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
+    <p>入力に誤りがあります。再入力してください。</p>
     @endif
     <form action="/chapter4" method="post">
         <table>
             @csrf
+            @if ($errors->has('name'))
+                <tr>
+                    <th>Error</th>
+                    <td>{{ $errors->first('name') }}</td>
+                </tr>
+            @endif
             <tr>
                 <th>name:</th>
                 <td><input type="text" name="name" id="" value="{{ old('name') }}"></td>
             </tr>
+            @if ($errors->has('mail'))
+                <tr>
+                    <th>Error</th>
+                    <td>{{ $errors->first('mail') }}</td>
+                </tr>
+            @endif
             <tr>
                 <th>mail:</th>
                 <td><input type="text" name="mail" id="" value="{{ old('mail') }}"></td>
             </tr>
+            @if ($errors->has('age'))
+                <tr>
+                    <th>Error</th>
+                    <td>{{ $errors->first('age') }}</td>
+                </tr>
+            @endif
             <tr>
                 <th>age:</th>
                 <td><input type="text" name="age" id="" value="{{ old('age') }}"></td>
