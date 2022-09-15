@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+// 追加されることで処理実行前にバリデーションが実行される
+use App\Http\Requests\Chapter4Request;
 use Illuminate\Http\Request;
 
 class Chapter4Controller extends Controller
@@ -11,14 +13,8 @@ class Chapter4Controller extends Controller
         return view('chapter4.index', ['msg' => 'フォームを入力:']);
     }
 
-    public function post(Request $request)
+    public function post(Chapter4Request $request)
     {
-        $validate_rule = [
-            'name' => 'required',
-            'mail' => 'email',
-            'age' => 'numeric|between:0,150',
-        ];
-        $this->validate($request, $validate_rule);
         return view('chapter4.index', ['msg' => '正しく入力されました!']);
     }
 }
