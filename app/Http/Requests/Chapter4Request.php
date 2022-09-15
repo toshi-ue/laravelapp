@@ -11,9 +11,14 @@ class Chapter4Request extends FormRequest
      *
      * @return bool
      */
+    // フォームリクエストの利用の許可
     public function authorize()
     {
-        return false;
+        if ($this->path() == 'chapter4') {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     /**
@@ -21,10 +26,13 @@ class Chapter4Request extends FormRequest
      *
      * @return array
      */
+    // 適用されるバリデーションルールの検証ルールの設定
     public function rules()
     {
         return [
-            //
+            'name' => 'required',
+            'mail' => 'email',
+            'age' => 'numeric|between:0,150'
         ];
     }
 }
