@@ -25,12 +25,19 @@ class Chapter4Controller extends Controller
 
     public function post(Request $request)
     {
-        // バリデーションの設定
-        $validator = Validator::make($request->all(), [
+        $rules = [
             'name' => 'required',
             'mail' => 'email',
             'age' => 'numeric|between:0,150',
-        ]);
+        ];
+        $messages = [
+            'name.required' => '名前は必ず入力してください',
+            'mail.email' => 'メールアドレスが必要です',
+            'age.numeric' => '年齢を正数で記入ください',
+            'age.between' => '年齢は0 ~ 150の間で入力してください',
+        ];
+        // バリデーションの設定
+        $validator = Validator::make($request->all(), $rules, $messages);
         // バリデーションに失敗したときに実行される
         if ($validator->fails()) {
             // リダイレクトして、エラ〜メッセージを表示して、入力されていた値を引き継ぐ
