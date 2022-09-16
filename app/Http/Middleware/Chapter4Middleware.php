@@ -24,6 +24,7 @@ class Chapter4Middleware
         // // データを追加する
         // $request->merge(['data' => $data]);
         // return $next($request);
+        // ddd('g');
         $response = $next($request);
         $content = $response->content();
 
