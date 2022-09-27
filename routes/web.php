@@ -12,6 +12,9 @@
 */
 
 use App\Http\Controllers\HelloController;
+use App\Http\Controllers\Chapter3Controller;
+// use App\Http\Controllers\Chapter4Controller;
+use App\Http\Middleware\Chapter4Middleware;
 
 Route::get('/', function () {
     return view('welcome');
@@ -20,3 +23,5 @@ Route::get('/', function () {
 Route::get('hello', 'HelloController@index');
 Route::post('hello', 'HelloController@post');
 Route::get('chapter3', 'Chapter3Controller@index');
+Route::get('chapter4', 'Chapter4Controller@index');
+Route::post('chapter4', 'Chapter4Controller@post');
