@@ -19,6 +19,7 @@ class Kernel extends HttpKernel
         \Illuminate\Foundation\Http\Middleware\ValidatePostSize::class,
         \App\Http\Middleware\TrimStrings::class,
         \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
+        \App\Http\Middleware\Chapter4Middleware::class,
     ];
 
     /**
@@ -36,7 +37,7 @@ class Kernel extends HttpKernel
             \App\Http\Middleware\VerifyCsrfToken::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
             // グローバルミドルウェアに登録
-            \App\Http\Middleware\Chapter4Middleware::class,
+            // \App\Http\Middleware\Chapter4Middleware::class,
         ],
 
         'api' => [

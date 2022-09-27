@@ -15,17 +15,9 @@ class Chapter4Middleware
      */
     public function handle($request, Closure $next)
     {
-        // $data = [
-        //     ['name' => 'taro', 'mail' => 'taro@yamada'],
-        //     ['name' => 'hanako', 'mail' => 'hanako@flower'],
-        //     ['name' => 'sachiko', 'mail' => 'sachico@happy'],
-        // ];
-
-        // // データを追加する
-        // $request->merge(['data' => $data]);
-        // return $next($request);
-        // ddd('g');
+        // dd('a');
         $response = $next($request);
+        // dd('b');
         $content = $response->content();
 
         // TODO: middlewareタグって何?

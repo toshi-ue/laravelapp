@@ -8,7 +8,7 @@ class Chapter4Validator extends Validator
 {
     public function validateChapter4($attribute, $value, $parameters)
     {
-        ddd('f');
+        dd('f');
         return $value % 2 == 0;
     }
 }

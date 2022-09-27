@@ -14,7 +14,6 @@ class Chapter4Request extends FormRequest
     // フォームリクエストの利用の許可
     public function authorize()
     {
-        // ddd('a');
         if ($this->path() == 'chapter4') {
             return true;
         } else {
@@ -30,7 +29,6 @@ class Chapter4Request extends FormRequest
     // 適用されるバリデーションルールの検証ルールの設定
     public function rules()
     {
-        // ddd('b');
         return [
             'name' => 'required',
             'mail' => 'email',
@@ -45,7 +43,7 @@ class Chapter4Request extends FormRequest
             'name.required' => '名前は必ず入力してください',
             'mail.email' => 'メールアドレスが必要です。',
             'age.numeric' => '年齢を正数でご記入ください',
-            // 'age.chapter4' => 'chapter4! 入力は偶数のみ受け付けます',
+            'age.chapter4' => 'chapter4! 入力は偶数のみ受け付けます',
         ];
     }
 }
